@@ -5,8 +5,6 @@
 #include <string>
 #include <unordered_set>
 #include <list>
-#include <iterator>
-
 using namespace std;
 
 template <class T>
@@ -24,12 +22,12 @@ public:
 		list<T> list;
 		for(int i = 0; i < ht_size; i++)
 		{
-			//for (it = temp.begin(); it != temp.end(); ++it) //NEED TO ITTERATE CORRECTRLTY S
-			for (auto const& it : arr_of_lists[i])
+			//list<T> temp = arr_of_lists[i];
+			for (list<T>::iterator it = arr_of_lists[i].begin(); it != arr_of_lists[i].end(); ++it) //NEED TO ITTERATE CORRECTRLTY S
 			{
 				if(obj == *it)
 				{
-					list.push_back(*it);
+					list.emplace_back(*it);
 				}
 			}
 		}
