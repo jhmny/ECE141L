@@ -24,10 +24,10 @@ public:
 	{
 		phoneName = num;
 	}
+	string toString() const; 
 	string toString();
-
 	bool operator==(const PhoneBookEntry that) const {
-		if(this->firstName.compare(that.firstName) && this->lastName.compare(that.lastName) && this->phoneName.compare(that.phoneName) == 0)
+		if((this->firstName.compare(that.firstName) && this->lastName.compare(that.lastName) && this->phoneName.compare(that.phoneName)) == 0)
 			return true;
 		else
 		return false;
