@@ -14,6 +14,7 @@ using namespace std;
 class WeightedGraph
 {
 private:
+	vector<Edge> edge_list;
 	vector<vector<Edge>> adj_list;	// adjacency list of the graph
 	int num_V, num_E;	// number of vertices and edges
 public:

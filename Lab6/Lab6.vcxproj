@@ -140,15 +140,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="PrimMSTLazy.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="WeightedGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Edge.h" />
+    <ClInclude Include="PrimMSTLazy.h" />
     <ClInclude Include="WeightedGraph.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="power.txt" />
     <Text Include="test1.txt" />
+    <Text Include="test2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

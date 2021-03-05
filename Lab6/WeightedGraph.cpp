@@ -24,8 +24,9 @@ WeightedGraph::WeightedGraph(string in) {
 }
 
 void WeightedGraph::add_edge(Edge& e) {
-	adj_list[e.get_first()].emplace_back(e);
-	adj_list[e.get_last()].emplace_back(e);
+	adj_list[e.get_first()].push_back(e);
+	adj_list[e.get_last()].push_back(e);
+	//edge_list.push_back(e);
 }
 
 vector<Edge> WeightedGraph::adj(int v) {

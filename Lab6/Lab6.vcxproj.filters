@@ -24,6 +24,9 @@
     <ClCompile Include="Edge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrimMSTLazy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Edge.h">
@@ -32,9 +35,18 @@
     <ClInclude Include="WeightedGraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PrimMSTLazy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="test2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
     <Text Include="test1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="power.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

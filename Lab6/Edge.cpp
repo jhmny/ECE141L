@@ -53,7 +53,7 @@ stringstream& operator>>(stringstream& ss, Edge& e) {
 }
 
 ostream& operator<<(ostream& cout, Edge e) {
-	cout << e.get_first() << " " << e.get_last();
+	cout << e.either() << "-" << e.other(e.either()) << " " << e.get_weight() << endl;
 	return cout;
 }
 
