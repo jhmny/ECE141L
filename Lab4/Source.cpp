@@ -26,6 +26,12 @@ int main() {
 	cout << "Rehash sizing done, Start Find" << endl;
 	cout << "==========================================" << endl;
 
+	cout << PhoneBookEntry << endl;
 
+	
+	PhoneBookEntry p1;
+	PhoneBookEntry p2;
+
+	if (p1 == p2);
 	return 0;
 }

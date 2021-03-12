@@ -38,4 +38,8 @@ public:
 		else
 			return true;
 	}
+
+	bool operator<<(const PhoneBookEntry that) const {
+
+	}
 };

@@ -11,23 +11,6 @@ Digraph::Digraph(string in) {
 		cout << "Could not open input file: " << in << ".\nExiting the program....." << endl;
 		exit(1);
 	}
-	//else {
-	//	string str_edge;
-	//	Edge* e;
-	//	fin >> num_V;
-	//	fin >> num_E;
-	//	adj_list.resize(num_V);
-	//	while (!fin.eof()) {
-	//		int v;x
-	//		int w;
-	//		fin >> v;
-	//		fin >> w;
-	//		if (!str_edge.empty()) {
-	//			e->update(v,w);
-	//			add_edge(e);
-	//		}
-	//	}
-	//}
 }
 
 Digraph::Digraph(int size) {
