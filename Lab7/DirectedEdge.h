@@ -22,6 +22,10 @@ public:
 	{
 		return v;
 	}
+	int to()
+	{
+		return w;
+	}
 	int dest(int v)
 	{
 		if (this->v == v)
