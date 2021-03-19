@@ -3,8 +3,8 @@
 #include <vector>
 #include <queue>
 #include <stack>
-#include "DirectedEdge.h"
-#include "EdgeWeightedDigraph.h"
+#include "Edge.h"
+#include "WeightedGraph.h"
 #include "IndexMinPQ.h"
 
 using namespace std;
@@ -15,10 +15,10 @@ private:
 	bool* marked;
 	bool* recursive;
 public:
-	DirectedDFS(EdgeWeightedDigraph G) {
-		marked = new bool[G.v()];
-		recursive = new bool[G.v()];
-		for (int i = 0; i < G.v(); i++) {
+	DirectedDFS(WeightedGraph G) {
+		marked = new bool[G.v_count()];
+		recursive = new bool[G.v_count()];
+		for (int i = 0; i < G.v_count(); i++) {
 			marked[i] = false;
 			recursive[i] = false;
 		}
@@ -26,22 +26,22 @@ public:
 	bool visited(int v) {
 		return marked[v];
 	}
-	bool isACycle(EdgeWeightedDigraph G) {
-		for (int i = 0; i < G.v(); i++)
+	bool isACycle(WeightedGraph G) {
+		for (int i = 0; i < G.v_count(); i++)
 		{
 			if (dfs(G, i)) return true;
 		}
 		return false;
 	}
 private:
-	bool dfs(EdgeWeightedDigraph G, int v) {
+	bool dfs(WeightedGraph G, int v) {
 		marked[v] = true;
 		recursive[v] = true;
-		for (DirectedEdge* w : G.adj(v)) {             //iterate through each vertex
-			if (!marked[w->dest(v)] && dfs(G, w->dest(v)))     //using dfs, if the edge had already been used then it's a back edge and the graph has a cycle
+		for (Edge w : G.adj(v)) {             //iterate through each vertex
+			if (!marked[w.other(v)] && dfs(G, w.other(v))   )  //using dfs, if the edge had already been used then it's a back edge and the graph has a cycle
 				return true;
-			else if (recursive[w->dest(v)])
-				return true;
+			else if (recursive[w.other(v)])
+				return true;	
 		}
 		recursive[v] = false;                 //end with resetting the recursive 
 		return false;
@@ -53,25 +53,25 @@ class DepthFirstOrder
 private:
 	bool* marked;
 	stack<unsigned> reversePostOrder;
-	void depth_first(EdgeWeightedDigraph g, int v) {
+	void depth_first(WeightedGraph g, int v) {
 		marked[v] = true;
-		for (DirectedEdge* w : g.adj(v)) {             //iterate through each vertex 
-			if (!marked[w->to()]) { //using dfs, if the edge had already been used then it's a back edge and the graph has a cycle
+		for (Edge w : g.adj(v)) {             //iterate through each vertex 
+			if (!marked[w.either()]) { //using dfs, if the edge had already been used then it's a back edge and the graph has a cycle
 				//w->to_String();
-				depth_first(g, w->to());
+				depth_first(g, w.either());
 			}
 		}
 		reversePostOrder.push(v);
 	}
 public:
-	DepthFirstOrder(EdgeWeightedDigraph g) {
-		marked = new bool[g.v()];
+	DepthFirstOrder(WeightedGraph g) {
+		marked = new bool[g.v_count()];
 		//cout << "\n this is vcount  " << g.v_count() << endl;
-		for (int i = 0; i < g.v(); i++)
+		for (int i = 0; i < g.v_count(); i++)
 		{
 			marked[i] = false;
 		}
-		for (int i = 0; i < g.v(); i++)
+		for (int i = 0; i < g.v_count(); i++)
 		{
 			if (marked[i] == false) {
 				depth_first(g, i);
@@ -86,23 +86,23 @@ public:
 
 class DagSP {
 private:
-	vector<DirectedEdge*> edgeTo;
+	vector<Edge> edgeTo;
 	vector<double> distTo;
 	bool isDag;
 	IndexMinPQ<double> pq = IndexMinPQ<double>();
 public:
-	DagSP(EdgeWeightedDigraph G, int s)
+	DagSP(WeightedGraph G, int s)
 	{
 		isDag = false;
-		DirectedDFS dfs = DirectedDFS(G);
+		DirectedDFS dfs = DirectedDFS(G);    // check for cycle
 		isDag = dfs.isACycle(G);
 		if (!isDag)
 		{
-			edgeTo.resize(G.v());
-			distTo.resize(G.v());
-			pq.resize(G.v());
+			edgeTo.resize(G.v_count());
+			distTo.resize(G.v_count());
+			pq.resize(G.v_count());
 
-			for (int v = 0; v < G.v(); v++)
+			for (int v = 0; v < G.v_count(); v++)
 			{
 				distTo[v] = numeric_limits<double>::infinity();
 			}
@@ -111,18 +111,18 @@ public:
 			while (!pq.isEmpty())
 			{
 				int v = pq.delMin();
-				for (DirectedEdge* e : G.adj(v))
+				for (Edge e : G.adj(v))
 					relax(e);
 			}
 		}
 	}
-	void relax(DirectedEdge* e)
+	void relax(Edge e)
 	{
-		int v = e->from();
-		int w = e->dest(v);
-		if (distTo[w] > distTo[v] + e->cost())
+		int v = e.either();
+		int w = e.other(v);
+		if (distTo[w] > distTo[v] + e.get_weight())
 		{
-			distTo[w] = distTo[v] + e->cost();
+			distTo[w] = distTo[v] + e.get_weight();
 			edgeTo[w] = e;
 			if (pq.contains(w)) pq.decreaseKey(w, distTo[w]);
 			else                pq.insert(w, distTo[w]);
@@ -132,7 +132,7 @@ public:
 	{
 		return distTo;
 	}
-	vector <DirectedEdge*> edge()
+	vector <Edge> edge()
 	{
 		return edgeTo;
 	}

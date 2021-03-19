@@ -139,7 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="WeightedGraph.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DagSP.h" />
+    <ClInclude Include="DirectedEdge.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="EdgeWeightedDigraph.h" />
+    <ClInclude Include="IndexMinPQ.h" />
+    <ClInclude Include="WeightedGraph.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="job.txt" />
+    <Text Include="job2.txt" />
+    <Text Include="job3.txt" />
+    <Text Include="job5.txt" />
+    <Text Include="test1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
