@@ -13,6 +13,7 @@ int main() {
 	DagSP dagsp(wg,0);
 	vector<Edge> edgeTo = dagsp.edge();
 	vector<double> distTo = dagsp.dist();
+	cout << wg;
 
 	//for (int v = 0; v < distTo.size(); v++)
 	//{
@@ -35,16 +36,16 @@ int main() {
 	vector<Edge> edgeToJob = dagspJob.edge();
 	vector<double> distToJob = dagspJob.dist();
 
-	for (int v = 0; v < distToJob.size(); v++)
-	{
-		cout << v << " ";
-		if (distToJob[v] < 10) cout << " " << distToJob[v] << "  ";
-		else cout << distToJob[v] << "  ";
-		if (v != 0) {
-			cout << edgeToJob[v];
-			cout << endl;
-		}
-		else cout << endl << endl;
-	}
+	//for (int v = 0; v < distToJob.size(); v++)
+	//{
+	//	cout << v << " ";
+	//	if (distToJob[v] < 10) cout << " " << distToJob[v] << "  ";
+	//	else cout << distToJob[v] << "  ";
+	//	if (v != 0) {
+	//		cout << edgeToJob[v];
+	//		cout << endl;
+	//	}
+	//	else cout << endl << endl;
+	//}
 	return 0;
 }
