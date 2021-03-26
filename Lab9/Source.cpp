@@ -9,16 +9,28 @@ using namespace std;
 int main() {
 	TrieSTR<string> testTST;
 	testTST.read("Text.txt");
+
 	queue<string>* qs = new queue<string>;
 	qs = testTST.keys();
 	
-	cout << "Popping From Test Queue " << endl;
-	string tempStr2;
+	//cout << "Popping From Test Queue " << endl;
+	
+	//while (!qs->empty()) {
+	// 	   string tempStr2;
+	//	tempStr2 = qs->front();
+	//	cout << tempStr2 << endl;
+	//	qs->pop();
+	//}
+
+	/*string tempStr2;
+	qs = testTST.keys("the");
 	while (!qs->empty()) {
 		tempStr2 = qs->front();
-		//cout << tempStr2 << endl;
+		cout << tempStr2 << endl;
 		qs->pop();
-	}
+	}*/
+
+
 
 	cout << "======================================" << endl;
 	cout << "Starting Thesaurus" << endl;

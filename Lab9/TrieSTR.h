@@ -56,7 +56,7 @@ private:
             return;
         }
         if (!x->value.empty()) {
-            q.emplace(prefix);
+            q.emplace(prefix + x->value);
         }
         for (char c = 40; c < 124; c++) { //only alphas range
             collect(x->next[c], prefix + c, q);
