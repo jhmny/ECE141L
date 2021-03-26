@@ -10,11 +10,11 @@
 using namespace std;
 
 template<class Value, class NodeType, Value(*nullValue)(), const int R = 256>
-class trieST {
+class trieSTBook {
 private:
 	shared_ptr<NodeType> root;
 public:
-	trieST() {
+	trieSTBook() {
 		root = static_cast<shared_ptr<NodeType>>(new NodeType); 
 	}
 	void insert(string key, Value val);

@@ -20,10 +20,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="NodeBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="trieST.h">
+    <ClInclude Include="trieSTBook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrieSTR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

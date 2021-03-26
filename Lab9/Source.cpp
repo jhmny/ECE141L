@@ -1,7 +1,7 @@
 #include <iostream>
 
-//#include "trieST.h"
-#include "Node.h"
+#include "trieSTR.h"
+#include "NodeR.h"
 using namespace std;
 
 int main() {

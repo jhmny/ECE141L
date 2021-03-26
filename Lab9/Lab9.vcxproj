@@ -142,8 +142,10 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="trieST.h" />
+    <ClInclude Include="NodeBook.h" />
+    <ClInclude Include="NodeR.h" />
+    <ClInclude Include="trieSTBook.h" />
+    <ClInclude Include="TrieSTR.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
