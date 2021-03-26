@@ -194,14 +194,12 @@ public:
 
         queue<string>* qs = new queue<string>;
         qs = keys(userWord);
-        
+
         string tempStr2;
         while (!qs->empty()) {
             tempStr2 = qs->front();
             cout << tempStr2 << endl;
             qs->pop();
         }
-
-        
     }
 };
