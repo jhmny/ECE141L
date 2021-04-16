@@ -46,11 +46,11 @@ public:
     {
         marked[v] = true;
         count++;
-        /*for(Edge* w : G.adj(v)){
-            if(!marked [w->get_last()]){
-                dfs(G,w->get_last());
+        for(int w : G.adj(v)){ //check to see if int conversion is correct 
+            if(!marked [w]){
+                dfs(G,w);
             }
-        }*/
+        }
     }
 };
 

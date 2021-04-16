@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{28c9dfda-7722-46b5-ad17-c2d20ad74705}</ProjectGuid>
-    <RootNamespace>Lab11</RootNamespace>
+    <ProjectGuid>{ede4f8e2-bb67-4f72-a006-4da3d0cf8d20}</ProjectGuid>
+    <RootNamespace>Lab7</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,21 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="dictionary.txt" />
-    <Text Include="example.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="digraph.cpp" />
-    <ClCompile Include="edge.cpp" />
-    <ClCompile Include="NFA.cpp" />
+    <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="WeightedGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DagDFS.h" />
-    <ClInclude Include="digraph.h" />
-    <ClInclude Include="edge.h" />
-    <ClInclude Include="NFA.h" />
-    <ClInclude Include="regEx.h" />
+    <ClInclude Include="DagSP.h" />
+    <ClInclude Include="DirectedEdge.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="EdgeWeightedDigraph.h" />
+    <ClInclude Include="IndexMinPQ.h" />
+    <ClInclude Include="WeightedGraph.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="job.txt" />
+    <Text Include="job2.txt" />
+    <Text Include="job3.txt" />
+    <Text Include="job5.txt" />
+    <Text Include="test1.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
