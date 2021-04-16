@@ -142,15 +142,17 @@
     <Text Include="dictionary.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hw9\digraph.cpp" />
-    <ClCompile Include="hw9\edge.cpp" />
-    <ClCompile Include="hw9\regEx.cpp" />
+    <ClCompile Include="digraph.cpp" />
+    <ClCompile Include="edge.cpp" />
+    <ClCompile Include="NFA.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hw9\digraph.h" />
-    <ClInclude Include="hw9\edge.h" />
-    <ClInclude Include="hw9\regEx.h" />
+    <ClInclude Include="DagDFS.h" />
+    <ClInclude Include="digraph.h" />
+    <ClInclude Include="edge.h" />
+    <ClInclude Include="NFA.h" />
+    <ClInclude Include="regEx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

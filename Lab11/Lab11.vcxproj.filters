@@ -23,24 +23,30 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw9\digraph.cpp">
+    <ClCompile Include="digraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw9\edge.cpp">
+    <ClCompile Include="edge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hw9\regEx.cpp">
+    <ClCompile Include="NFA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hw9\digraph.h">
+    <ClInclude Include="digraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hw9\edge.h">
+    <ClInclude Include="edge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hw9\regEx.h">
+    <ClInclude Include="regEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DagDFS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NFA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

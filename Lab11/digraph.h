@@ -16,6 +16,7 @@ public:
 
 class Digraph {
 public:
+	Digraph() {}
 	Digraph(string);
 	Digraph(int);
 	vector<int> adj(int);

@@ -2,6 +2,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Edge {
@@ -20,6 +21,10 @@ public:
 	int get_first() const;
 	int get_last();
 	int get_last() const;
+	void to_String()
+		 {
+		        cout <<first << "->" << last <<endl;
+		}
 	bool operator==(const Edge& e) const;
 private:
 	int first, last;
