@@ -19,17 +19,16 @@ public:
     }
     DagDFS(Digraph G, vector<int> source) // find vertices reachable from sources
     {
-    marked = new bool[G.v_count()];
-    for(int i = 0; i < G.v_count(); i++){
-        marked[i] = false;
-    }
-    count = 0;
-    for(int v = 0; v<G.v_count(); v++)
-    {
-        if(marked[v] == false){
-            dfs(G,v);
+        marked = new bool[G.v_count()];
+        for (int i = 0; i < G.v_count(); i++) {
+            marked[i] = false;
         }
-    }
+        for (int i = 0; i < source.size(); i++)
+        {
+            if (marked[i] == false) {
+                dfs(G, source[i]);
+            }
+        }
     }
     ~DagDFS(){
         delete[] marked;

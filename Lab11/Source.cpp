@@ -24,21 +24,21 @@ int main()
     Digraph testD("example.txt");
 
     DagDFS test1(testD, 0);
-    if (test1.Marked(5)) cout << "5 reachable" << endl;
+    if (test1.Marked(5)) cout << "5 reachable from 0" << endl;
     else cout << "5 unreachable" << endl;
     DagDFS test2(testD, 2);
-    if (test1.Marked(3)) cout << "3 reachable" << endl;
+    if (test2.Marked(3)) cout << "3 reachable from 2" << endl;
     else cout << "3 unreachable" << endl;
     vector<int> nums(2);
     nums[0] = 2; nums[1] = 4;
     DagDFS test3(testD, nums);
-    if (test1.Marked(3)) cout << "3 reachable" << endl;
+    if (test3.Marked(3)) cout << "3 reachable from 2, 4" << endl;
     else cout << "3 unreachable" << endl;
 
 
     string regex="(GCG(CGG|AGG)*CTG)";
     NFA testNFA(regex);
-    testNFA.prints();
+    //testNFA.prints();
     cout <<"----------------------------------" << endl;
     string txt = "GCGGCGTGTGTGCGAGAGAGTGGGTTTAAAGCTGGCGCGGAGGCGGCTGGCGCGGAGGCTG"; //2 true
     cout << testNFA.recognizes(txt) << endl;
@@ -46,6 +46,12 @@ int main()
     cout << testNFA.recognizes(txt) << endl;
 
     txt = "cheese";
+    cout << testNFA.recognizes(txt) << endl;
+
+    txt = "GCGCGGAGGCGGCTG";
+    cout << testNFA.recognizes(txt) << endl;
+
+    txt = "AGCGCGGAGGCGGCTG";
     cout << testNFA.recognizes(txt) << endl;
 
     return 0;

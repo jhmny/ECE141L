@@ -89,11 +89,11 @@ public:
                 if ((re[v] == txt.at(i)) || re[v] == '.')
                     states.push_back(v + 1);
             }
+            vector<int> pcv(states.begin(), states.end());
             pc.clear();
             pc.shrink_to_fit();
-            vector<int> pcv(states.begin(), states.end());
             DagDFS ndfs(G, pcv);
-            pc = vector<int>();
+            //pc = vector<int>();
 
             for (int v = 0; v < G.v_count(); v++)
                 if (ndfs.Marked(v))
